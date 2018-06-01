@@ -44,12 +44,18 @@ a:hover {
   color: white;
 }
 
-p {
-  color: rgb(0, 255, 0);
-  float: right;
-}
-
 #logo {
   height: 10%;
   width: 10%;
+}
+
+#on {
+  color: red;
+  float: right;
+}
+
+
+#on {
+  color: green;
+  float: right;
 }

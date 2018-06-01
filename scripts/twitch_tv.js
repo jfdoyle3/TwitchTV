@@ -5,16 +5,6 @@
 //https://wind-bow.glitch.me/twitch-api/streams/BlodgetTV - stream data
 //https://wind-bow.glitch.me/twitch-api/channels/dota2     - game channel
 //
-//$.ajax({
-//    type: 'GET',
-//    url: 'https://api.twitch.tv/kraken/channels/twitch',
-//    headers: {
-//      'Client-ID': 'ykbtvj4v513rrmj2ylqrd03pan0g8z'
-//    },
-//    success: function(data) {
-//      console.log(data);
-//    }
-//   });
 var usr=[ "ninja","BlodgetTV", "cretetion", "storbeck", "OgamingSC2"];
 for (i in usr){
 	// Users 
@@ -24,44 +14,58 @@ for (i in usr){
     headers: {
       'Client-ID': 'ykbtvj4v513rrmj2ylqrd03pan0g8z'
     },
-    success: function(users) {
-    console.log(users);
+    success: function(chanl) {
+  //    console.log(chanl);
+//   var eLi= document.createElement("li");
+//   var uName="<a href="+chanl.display_name+"></a>";
+//   var aImg="<img id='logo' src="+chanl.logo+">";
+//   var aTag="<a href="+chanl.url+">"+chanl.display_name+"</a>";
+//   eLi.innerHTML=(aImg+" "+aTag);
+//   document.getElementById("uList").appendChild(eLi); 
+   
+   // stream
+    $.ajax({
+   type: 'GET',
+   url: 'https://api.twitch.tv/kraken/streams/'+usr[i],
+   headers: {
+      'Client-ID': 'ykbtvj4v513rrmj2ylqrd03pan0g8z'
+    },
+  success: function(strm) {
+    console.log(strm);
+    var on="<p id='on'>online</p>";
+    var off="<p id='off'>offline</p>";
     var eLi= document.createElement("li");
-    var uName="<a href="+users.display_name+"></a>";
-    var aImg="<img id='logo' src="+users.logo+">";
-    var aTag="<a href="+users.url+">"+users.display_name+"</a>";
-    eLi.innerHTML=(aImg+" "+aTag);
-    document.getElementById("uList").appendChild(eLi); 
+    console.log(usr[i]);
+  //  console.log(strm.stream.stream_type);
+    
 
-    }
-   });
-   
-   // streams
-  // $.ajax({
-  //  type: 'GET',
-  //  url: 'https://api.twitch.tv/kraken/streams/'+usr[i],
-  //  headers: {
-  //    'Client-ID': 'ykbtvj4v513rrmj2ylqrd03pan0g8z'
-  //  },
-  //  success: function(strm) {
-  //    console.log(strm);
-  //    if (strm.user == null) {
-//
-  //    }
-  //  }
-  // });
-   
-   // channels
- //  $.ajax({
- //   type: 'GET',
- //   url: 'https://api.twitch.tv/kraken/users/'+usr[i],
- //   headers: {
- //     'Client-ID': 'ykbtvj4v513rrmj2ylqrd03pan0g8z'
- //   },
- //   success: function(user) {
- //     console.log();
- //     var p=usr.pop();
- //     $("#"+p).append("<img src="+user.logo+">");
- //   }
- //  });
- };
+
+
+
+
+    var uName="<a href="+chanl.display_name+"></a>";
+    var aImg="<img id='logo' src="+chanl.logo+">";
+    var aTag="<a href="+chanl.url+">"+chanl.display_name+"</a>";
+     eLi.innerHTML=(aImg+" "+aTag);
+     document.getElementById("uList").appendChild(eLi); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   }
+  });
+ }
+});
+}
