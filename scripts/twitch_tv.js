@@ -22,6 +22,8 @@ for (i in usr){
 //   var aTag="<a href="+chanl.url+">"+chanl.display_name+"</a>";
 //   eLi.innerHTML=(aImg+" "+aTag);
 //   document.getElementById("uList").appendChild(eLi); 
+   var uList=[];
+   uList.push(chanl.display_name);
    
    // stream
     $.ajax({
@@ -31,11 +33,12 @@ for (i in usr){
       'Client-ID': 'ykbtvj4v513rrmj2ylqrd03pan0g8z'
     },
   success: function(strm) {
-    console.log(strm);
+   //  console.log(strm);
+    console.log(uList);
     var on="<p id='on'>online</p>";
     var off="<p id='off'>offline</p>";
     var eLi= document.createElement("li");
-    console.log(usr[i]);
+    ;
   //  console.log(strm.stream.stream_type);
     
 
