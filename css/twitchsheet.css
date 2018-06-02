@@ -49,13 +49,13 @@ a:hover {
   width: 10%;
 }
 
-#on {
-  color: red;
+#off {
+  color: rgb(255, 0, 0);
   float: right;
 }
 
 
 #on {
-  color: green;
+  color: rgb(0, 255, 0);
   float: right;
 }
