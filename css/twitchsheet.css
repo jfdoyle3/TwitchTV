@@ -1,0 +1,61 @@
+
+ul li {
+  list-style-type: none;
+}
+
+div {
+  background-color: rgb(211, 134, 211);
+  width: 25%;
+  position:absolute;
+  color:White;
+  border-radius: 25px;
+  border-color: purple;
+  top:50%;
+  left:50%;
+  padding:15px;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px; 
+}
+
+
+li {
+  list-style-type: none;
+  width: 50%;
+  padding: 10px;
+  background-color: #9d3bc4;
+  color: white;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+a {  
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+#logo {
+  height: 10%;
+  width: 10%;
+}
+
+#off {
+  color: rgb(255, 0, 0);
+  float: right;
+}
+
+
+#on {
+  color: rgb(0, 255, 0);
+  float: right;
+}
